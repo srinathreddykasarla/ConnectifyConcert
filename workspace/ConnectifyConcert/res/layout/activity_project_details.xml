@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ProjectDetailsActivity" >
+
+    <TextView
+        android:id="@+id/projectNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/loading_textView"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/projectIDTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/projectNameTV"
+        android:layout_below="@+id/projectNameTV"
+        android:layout_marginTop="16dp"
+        android:text="@string/project_id_textView" />
+
+    <TextView
+        android:id="@+id/managerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/projectIDTV"
+        android:layout_below="@+id/projectIDTV"
+        android:layout_marginTop="17dp"
+        android:text="@string/manager_textView" />
+
+    <TextView
+        android:id="@+id/projectStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/managerTV"
+        android:layout_below="@+id/managerTV"
+        android:layout_marginTop="18dp"
+        android:text="@string/project_status_textView" />
+
+    <Button
+        android:id="@+id/teamDetailsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/projectStatusTV"
+        android:layout_below="@+id/projectStatusTV"
+        android:layout_marginTop="22dp"
+        android:text="@string/team_details_button"
+        android:onClick="getTeamDetails" />
+
+</RelativeLayout>

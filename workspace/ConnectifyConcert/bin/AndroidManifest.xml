@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.avi.connectifyconcert"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.avi.connectifyconcert.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.avi.connectifyconcert.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" >
+    </permission>
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:theme="@style/MyTheme" >
+        <activity
+            android:name="com.avi.connectifyconcert.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.DashBoardActivity"
+            android:label="@string/title_activity_dash_board" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.ProjectActivity"
+            android:label="@string/title_activity_project"
+            android:parentActivityName="com.avi.connectifyconcert.DashBoardActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.avi.connectifyconcert.DashBoardActivity" />
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.TeamActivity"
+            android:label="@string/title_activity_team" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.ProjectDetailsActivity"
+            android:label="@string/title_activity_project_details" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.TeamDetailsActivity"
+            android:label="@string/title_activity_team_details" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.AssignActivity"
+            android:label="@string/title_activity_assign_activity" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.DetailsActivity"
+            android:label="@string/title_activity_assign_activity" >
+        </activity>
+
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.avi.connectify" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.avi.connectifyconcert.GCMIntentService" />
+
+        <activity
+            android:name="com.avi.connectifyconcert.FileDetailsActivity"
+            android:label="@string/title_activity_file_details" >
+        </activity>
+        <activity
+            android:name="com.avi.connectifyconcert.UploadProgressActivity"
+            android:label="@string/title_activity_upload_progress" >
+        </activity>
+    </application>
+
+</manifest>

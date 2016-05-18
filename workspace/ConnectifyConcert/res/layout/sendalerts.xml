@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/toTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/dev_textView"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toTextView"
+        android:layout_below="@+id/toTextView"
+        android:layout_marginTop="20dp"
+        android:text="@string/project_textView"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/crimnameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/aboutTextView"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/aboutTextView"
+        android:ems="10"
+        android:hint="@string/hint_project"
+        android:inputType="none"
+        android:focusableInTouchMode="false"
+        android:onClick="searchProject"
+         />
+
+    <EditText
+        android:id="@+id/toEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aboutTextView"
+        android:layout_alignLeft="@+id/crimnameEditText"
+        android:ems="10"
+        android:hint="@string/hint_to"
+        android:inputType="textPersonName"
+        android:focusableInTouchMode="false"
+        android:onClick="searchDev" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aboutTextView"
+        android:layout_alignRight="@+id/crimnameEditText"
+        android:layout_below="@+id/aboutTextView"
+        android:layout_marginTop="51dp"
+        android:ems="10"
+        android:hint="@string/progress_textView"
+        android:inputType="textMultiLine"
+        android:maxLines="@integer/max_desc_lines" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sendButton"
+        android:layout_alignBottom="@+id/sendButton"
+        android:layout_alignRight="@+id/descriptionEditText"
+        android:layout_toRightOf="@+id/sendButton"
+        android:onClick="uploadFunc"
+        android:text="@string/upload_button" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/descriptionEditText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="21dp"
+        android:text="@string/cancel_button" />
+
+</RelativeLayout>
